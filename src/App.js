@@ -1,11 +1,16 @@
 import './App.css';
+import {Users, Posts} from "./components";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-        App
-    </div>
-  );
+    const [userId, setUserId] = useState(null)
+
+    return (
+        <div className="App">
+            <Users setUserId={setUserId}/>
+            {userId && <Posts userId={userId}/>}
+        </div>
+    );
 }
 
 export default App;
